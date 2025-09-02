@@ -1,0 +1,29 @@
+version: 2
+
+sources:
+  - name: my_source
+    tables:
+      - name: source_table
+
+models:
+  - name: bronze_flights
+    description: "Raw flights data"
+    columns:
+      - name: id
+        tests:
+          - not_null
+          - unique
+
+  - name: silver_flights
+    description: "Cleaned flights data"
+    columns:
+      - name: id
+        tests:
+          - not_null
+          - unique
+
+  - name: gold_flights
+    description: "Aggregated flights data"
+    columns:
+      - name: origin
+      - name: destination

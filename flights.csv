@@ -1,0 +1,6 @@
+flight_id,origin,destination,flight_date,passengers
+1,JFK,LAX,2025-09-01,150
+2,LAX,SFO,2025-09-01,120
+3,JFK,ORD,2025-09-02,200
+4,ORD,LAX,2025-09-02,180
+
