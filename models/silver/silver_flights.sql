@@ -1,9 +1,14 @@
--- Silver: Cleaned data
-SELECT
-    id,
-    flight_date,
+-- Silver layer: cleaned & deduplicated
+with bronze as (
+    select * from {{ ref('bronze_flights') }}
+)
+select
+    flight_id,
+    airline,
     origin,
     destination,
-    passengers
-FROM {{ ref('bronze_flights') }}
-WHERE id IS NOT NULL
+    departure_time,
+    arrival_time
+from bronze
+where flight_id is not null
+

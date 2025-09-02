@@ -1,8 +1,8 @@
--- Gold: Aggregated / business-ready data
-SELECT
-    origin,
-    destination,
-    COUNT(*) AS total_flights,
-    SUM(passengers) AS total_passengers
-FROM {{ ref('silver_flights') }}
-GROUP BY origin, destination
+-- Gold layer: analytics-ready
+select
+    airline,
+    count(distinct flight_id) as total_flights,
+    avg(arrival_delay) as avg_delay
+from {{ ref('silver_flights') }}
+group by airline
+

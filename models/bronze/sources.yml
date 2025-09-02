@@ -1,0 +1,8 @@
+version: 2
+
+sources:
+  - name: my_source          # this is the source name used in your SQL
+    schema: bronze           # the schema/catalog in Databricks where your CSV or raw table will live
+    tables:
+      - name: flights        # table name in Databricks
+

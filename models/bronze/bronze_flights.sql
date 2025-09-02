@@ -1,3 +1,5 @@
--- Bronze: Raw data (just load from source)
-SELECT *
-FROM {{ source('my_source', 'source_table') }}
+-- Bronze layer: raw ingestion
+select
+    *
+from {{ source('my_source', 'flights') }}
+
