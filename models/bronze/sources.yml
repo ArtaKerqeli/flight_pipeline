@@ -1,8 +1,15 @@
 version: 2
 
 sources:
-  - name: my_source          # this is the source name used in your SQL
-    schema: bronze           # the schema/catalog in Databricks where your CSV or raw table will live
+  - name: airline_source
+    database: dbt_akerqeli        # your catalog
+    schema: dbt_akerqeli          # same as catalog if schema matches
     tables:
-      - name: flights        # table name in Databricks
+      - name: bronzer                # Bronze table
+
+  - name: health_source
+    database: dbt_akerqeli
+    schema: dbt_akerqeli
+    tables:
+      - name: silvergold             # Silver/Gold table
 

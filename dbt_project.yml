@@ -1,15 +1,12 @@
-name: flight_pipeline
+name: 'flight_pipeline'
 version: '1.0'
 config-version: 2
 
-profile: databricks
+profile: 'flight_pipeline'
 
-models:
-  flight_pipeline:
-    bronze:
-      +materialized: table
-    silver:
-      +materialized: table
-    gold:
-      +materialized: table
+source-paths: ["models"]
+target-path: "target"
+clean-targets:
+  - "target"
+  - "dbt_modules"
 

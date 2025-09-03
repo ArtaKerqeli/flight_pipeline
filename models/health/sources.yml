@@ -1,0 +1,9 @@
+version: 2
+
+sources:
+  - name: health_source
+    database: your_database_name   # replace with your database name
+    schema: your_schema_name       # replace with your schema
+    tables:
+      - name: cancer_data
+

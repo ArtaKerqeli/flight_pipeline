@@ -1,5 +1,4 @@
--- Bronze layer: raw ingestion
-select
-    *
-from {{ source('my_source', 'flights') }}
+-- models/bronze/bronze_flights.sql
+SELECT *
+FROM {{ source('my_source', 'flights') }}
 

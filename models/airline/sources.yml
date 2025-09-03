@@ -1,0 +1,16 @@
+version: 2
+
+sources:
+  - name: airline_source
+    database: workspace
+    schema: flight_dbt
+    tables:
+      - name: airports
+      - name: weather
+
+  - name: health_source
+    database: workspace
+    schema: flight_dbt
+    tables:
+      - name: cancer_data
+
